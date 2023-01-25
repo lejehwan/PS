@@ -12,7 +12,6 @@ public class Main {
     static int row, col = 0;
     static int[] addRow = {1, -1, 0, 0};
     static int[] addCol = {0, 0, 1, -1};
-    static int[][] cost;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,20 +26,24 @@ public class Main {
             }
         }
         visited = new boolean[row][col];
-        cost = new int[row][col];
         bfs(0, 0);
         outPut();
     }
 
     private static void outPut() {
         System.out.println(graph[row - 1][col - 1]);
+//        for (int i = 0; i < graph.length; i++) {
+//            for (int j = 0; j < graph[i].length; j++) {
+//                System.out.print(graph[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
     }
 
     private static void bfs(int xVertex, int yVertex) {
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[]{xVertex, yVertex});
         visited[xVertex][yVertex] = true;
-        cost[xVertex][yVertex] = 1;
         while (!queue.isEmpty()) {
             int getXVertex = queue.peek()[0];
             int getYVertex = queue.peek()[1];
