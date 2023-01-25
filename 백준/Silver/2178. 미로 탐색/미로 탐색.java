@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 public class Main {
 
     static int[][] graph;
+    static boolean[][] visited;
     static int row, col = 0;
     static int[] addRow = {1, -1, 0, 0};
     static int[] addCol = {0, 0, 1, -1};
@@ -25,6 +26,7 @@ public class Main {
                 graph[i][j] = Integer.parseInt(inputLine[j]);
             }
         }
+        visited = new boolean[row][col];
         cost = new int[row][col];
         bfs(0, 0);
         outPut();
@@ -37,6 +39,7 @@ public class Main {
     private static void bfs(int xVertex, int yVertex) {
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[]{xVertex, yVertex});
+        visited[xVertex][yVertex] = true;
         cost[xVertex][yVertex] = 1;
         while (!queue.isEmpty()) {
             int getXVertex = queue.peek()[0];
@@ -46,8 +49,9 @@ public class Main {
                 int newXVertex = getXVertex + addRow[i];
                 int newYVertex = getYVertex + addCol[i];
                 if (newXVertex >= 0 && newXVertex < row && newYVertex >= 0 && newYVertex < col) {
-                    if (graph[newXVertex][newYVertex] == 1) {
+                    if (graph[newXVertex][newYVertex] == 1 && !visited[newXVertex][newYVertex]) {
                         queue.add(new int[]{newXVertex, newYVertex});
+                        visited[newXVertex][newYVertex] = true;
                         graph[newXVertex][newYVertex] = graph[getXVertex][getYVertex] + 1;
                     }
                 }
