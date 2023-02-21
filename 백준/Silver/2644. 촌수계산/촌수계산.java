@@ -30,7 +30,8 @@ public class Main {
             graph.get(toVertex).add(fromVertex);
             graph.get(fromVertex).add(toVertex);
         }
-        bfs(peopleA);
+//        bfs(peopleA);
+        dfs(peopleA);
 //        printGraph();
 //        printVisited();
         output();
@@ -56,6 +57,17 @@ public class Main {
         else System.out.println(visited[peopleB]);
     }
 
+    private static void dfs(int startVertex){
+        for (int i = 0; i < graph.get(startVertex).size(); i++) {
+            int newVertex = graph.get(startVertex).get(i);
+            if (visited[newVertex] == 0){
+                visited[newVertex] = visited[startVertex] + 1;
+                dfs(newVertex);
+            }
+            if (newVertex == peopleB) return;
+        }
+    }
+
     private static void bfs(int startVertex){
         Queue<Integer> queue = new LinkedList<>();
         queue.add(startVertex);
@@ -68,6 +80,7 @@ public class Main {
                     queue.add(newVertex);
                     visited[newVertex] = visited[getVertex] + 1;
                 }
+                if (newVertex == peopleB) return;
             }
         }
     }
