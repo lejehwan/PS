@@ -8,9 +8,19 @@ class Solution {
     static Queue<int[]> queue = new LinkedList<>();
     
     public int solution(int[][] board) {
+        initializeGraph(board);
+        bfs();
+        return countSafeLocate();
+    }
+    
+    private void initializeGraph(int[][] board) {
         graph = board;
         row = graph.length;
         col = graph[0].length;
+        findInitialOnes();
+    }
+    
+    private void findInitialOnes() {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 if (graph[i][j] == 1) {
@@ -18,33 +28,33 @@ class Solution {
                 }
             }
         }
-        bfs();
-        return getSafeLocate();
     }
     
-    public static void bfs() {
+    private void bfs() {
         while (!queue.isEmpty()) {
-            int getVertexX = queue.peek()[0];
-            int getVertexY = queue.peek()[1];
-            queue.poll();
+            int[] vertex = queue.poll();
+            int getVertexX = vertex[0];
+            int getVertexY = vertex[1];
+            
             for (int i = 0; i < addRow.length; i++) {
                 int newVertexX = getVertexX + addRow[i];
                 int newVertexY = getVertexY + addCol[i];
-                if (newVertexX >= 0 && newVertexX < row && newVertexY >= 0 && newVertexY < col
-                        && graph[newVertexX][newVertexY] == 0) {
+                
+                if (isValidPosition(newVertexX, newVertexY) && graph[newVertexX][newVertexY] == 0) {
                     graph[newVertexX][newVertexY] = 1;
                 }
             }
         }
     }
     
-    public static int getSafeLocate() {
-        int cnt = 0;
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                if (graph[i][j] == 0) cnt++;
-            }
-        }
-        return cnt;
+    private boolean isValidPosition(int x, int y) {
+        return x >= 0 && x < row && y >= 0 && y < col;
+    }
+    
+    private int countSafeLocate() {
+        return (int) Arrays.stream(graph)
+                .flatMapToInt(Arrays::stream)
+                .filter(value -> value == 0)
+                .count();
     }
 }
