@@ -7,13 +7,13 @@ class Solution
 
         Stack<Character> stack = new Stack<>();
         char[] charArr = s.toCharArray();
-        for (int i = 0; i < charArr.length; i++) {
+        for (char ch : charArr) {
             if (stack.isEmpty()) {
-                stack.push(charArr[i]);
+                stack.push(ch);
                 continue;
             }
-            if (stack.peek() != charArr[i]) {
-                stack.push(charArr[i]);
+            if (stack.peek() != ch) {
+                stack.push(ch);
             } else {
                 stack.pop();
             }
