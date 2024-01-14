@@ -13,13 +13,10 @@ class Solution {
         list.sort(Collections.reverseOrder());
 
         // k 크기에 따른 분기처리
-        int sum = 0;
         for (Integer val : list) {
-            if (sum == k) return answer;
-            if (sum < k) {
-                sum += val;
-                answer ++;
-            }
+            if (k <= 0) return answer;
+            k -= val;
+            answer ++;
         }
         return answer;
     }
