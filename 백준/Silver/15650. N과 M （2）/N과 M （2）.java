@@ -1,40 +1,33 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-	static int n,m, k;
-	static int[] arr;
-	static boolean[] visited;
-	
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		n = sc.nextInt();
-		m = sc.nextInt();
-		arr = new int[m];
-		visited = new boolean[n];
-		dfs(0);
-		sc.close();
-	}
-	
-	public static void dfs(int v) {
-		if (v == m) {	
-			for (int answer : arr) {
-				System.out.print(answer + " ");
-			}
-			System.out.println();
-			return;
-		}
-		for (int i = 0; i < n; i++) {
-			if (k <= i) {
-				if (!visited[i]) {
-					visited[i] = true;
-					arr[v] = i+1;
-					k = i+1;
-					dfs(v+1);
-					visited[i] = false;
-					k = 0;
-				}
-			}
-			
-		}
-	}
+    static int[] arr;
+    static int n = 0, m = 0;
+    static StringBuilder sb;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = br.readLine().split(" ");
+        n = Integer.parseInt(input[0]);
+        m = Integer.parseInt(input[1]);
+        arr = new int[m];
+        sb = new StringBuilder();
+        dfs(0, 1);
+        System.out.println(sb.toString());
+    }
+
+    private static void dfs(int depth, int crt) {
+        if (depth == m) {
+            for (int val : arr) {
+                sb.append(val).append(" ");
+            }
+            sb.append("\n");
+            return;
+        }
+
+        for (int i = crt; i <= n; i++) {
+            arr[depth] = i;
+            dfs(depth + 1, i + 1);
+        }
+    }
 }
