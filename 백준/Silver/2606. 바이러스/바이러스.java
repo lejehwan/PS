@@ -1,55 +1,50 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
 
-    static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
-    static boolean[] visited;
-    static int cnt = 0;
-    static int startVertex = 6;
+    private static int[][] graph;
+    private static boolean[] visited;
+    private static int vertex, answer = 0;
+
     public static void main(String[] args) throws IOException {
-        //setUp
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int vertex = Integer.parseInt(br.readLine());
-        for (int i = 0; i < vertex + 1; i++) {
-            graph.add(new ArrayList<Integer>());
+        init();
+        dfs(1);
+        answer();
+    }
+
+    private static void dfs(int vertex) {
+        Stack<Integer> stack = new Stack<>();
+        visited[vertex] = true;
+        stack.push(vertex);
+        
+        while(!stack.isEmpty()) {
+            for (int i = 1; i < graph.length; i++) {
+                if (graph[vertex][i] != 0 && !visited[i]) {
+                    answer ++;
+                    dfs(i);
+                }
+            }
+            stack.pop();
         }
-        visited = new boolean[vertex + 1];
+    }
+
+    private static void init() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        vertex = Integer.parseInt(br.readLine());
         int edge = Integer.parseInt(br.readLine());
+        graph = new int[vertex + 1][vertex + 1];
+        visited = new boolean[vertex + 1];
         for (int i = 0; i < edge; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int toVertex = Integer.parseInt(st.nextToken());
             int fromVertex = Integer.parseInt(st.nextToken());
-            graph.get(toVertex).add(fromVertex);
-            graph.get(fromVertex).add(toVertex);
-        }
-        bfs(startVertex);
-        outPut();
-    }
-    private static void outPut(){
-        System.out.println(cnt);
-    }
-
-    private static void bfs(int vertex) {
-        Queue<Integer> queue = new LinkedList<Integer>();
-        visited[vertex] = true;
-        queue.add(vertex);
-        while (!queue.isEmpty()) {
-            int getVertex = queue.poll();
-            for (int i = 0; i < graph.get(getVertex).size(); i++) {
-                int nextVertex = graph.get(getVertex).get(i);
-                if (!visited[nextVertex]) {
-                    cnt++;
-                    visited[nextVertex] = true;
-                    queue.add(nextVertex);
-                }
-            }
+            graph[toVertex][fromVertex] = 1;
+            graph[fromVertex][toVertex] = 1;
         }
     }
 
+    private static void answer() {
+        System.out.println(answer);
+    }
 }
