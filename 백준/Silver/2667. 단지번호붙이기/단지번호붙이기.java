@@ -1,71 +1,82 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class Main {
-    static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-    static boolean[][] visited;
-    static int[] addRow = {0, 1, -1, 0};
-    static int[] addCol = {1, 0, 0, -1};
-    static int mapSize, cnt = 0;
-    static ArrayList<Integer> store = new ArrayList<>();
+
+    private static final int[] ADD_X = new int[] {1, -1, 0, 0};
+    private static final int[] ADD_Y = new int[] {0, 0, 1, -1};
+    private static final int FILLED = 1;
+
+    private static int[][] map;
+    private static boolean[][] visited;
+    private static int cnt = 0;
+    private static List<Integer> answerList;
+
     public static void main(String[] args) throws IOException {
-        //setUp
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        mapSize = Integer.parseInt(br.readLine());
-        for (int i = 0; i < mapSize; i++) {
-            graph.add(new ArrayList<>());
-        }
-        for (int i = 0; i < mapSize; i++) {
-            String[] inputLine = br.readLine().split("");
-            for (int j = 0; j < mapSize; j++) {
-                graph.get(i).add(Integer.parseInt(inputLine[j]));
-            }
-        }
-        visited = new boolean[mapSize][mapSize];
-        for (int i = 0; i < mapSize; i++) {
-            for (int j = 0; j < mapSize; j++) {
-                if (graph.get(i).get(j) == 1 && !visited[i][j]){
+        init();
+        exhaustiveSearch();
+        answer();
+    }
+
+    private static void answer() {
+        System.out.println(answerList.size());
+        answerList.stream().sorted().forEach(System.out::println);
+    }
+
+    private static void exhaustiveSearch() {
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map.length; j++) {
+                if (map[i][j] == FILLED && !visited[i][j]) {
                     bfs(i, j);
-                    store.add(cnt);
-                    cnt = 0;
+                    answerList.add(cnt);
                 }
             }
         }
-        outPut();
     }
 
-    private static void outPut(){
-        System.out.println(store.size());
-        Collections.sort(store);
-        for (Integer answer : store) {
-            System.out.println(answer);
-        }
-    }
-
-    private static void bfs(int xVertex, int yVertex){
+    private static void bfs(int x, int y) {
         Queue<int[]> queue = new LinkedList<>();
-        queue.add(new int[] {xVertex, yVertex});
-        visited[xVertex][yVertex] = true;
-        cnt++;
-        while (!queue.isEmpty()){
-            int getXVertex = queue.peek()[0];
-            int getYVertex = queue.peek()[1];
+        queue.add(new int[] {x, y});
+        visited[x][y] = true;
+        cnt = 1;
+
+        while (!queue.isEmpty()) {
+            int getX = queue.peek()[0];
+            int getY = queue.peek()[1];
             queue.poll();
-            for (int i = 0; i < 4; i++) {
-                int newXVertex = getXVertex + addRow[i];
-                int newYVertex = getYVertex + addCol[i];
-                if (newXVertex >= 0 && newXVertex < mapSize && newYVertex >= 0 && newYVertex < mapSize){
-                    if (graph.get(newXVertex).get(newYVertex) == 1 && !visited[newXVertex][newYVertex]){
-                        queue.add(new int[]{newXVertex, newYVertex});
-                        visited[newXVertex][newYVertex] = true;
-                        cnt++;
-                    }
+            for (int i = 0; i < ADD_X.length; i++) {
+                int newX = getX + ADD_X[i];
+                int newY = getY + ADD_Y[i];
+                if (isValidMapSize(newX, newY)
+                        && map[newX][newY] == FILLED && !visited[newX][newY]) {
+                    cnt ++;
+                    visited[newX][newY] = true;
+                    queue.add(new int[] {newX, newY});
                 }
             }
         }
     }
 
+    private static boolean isValidMapSize(int newX, int newY) {
+        return newX >= 0 && newX < map.length && newY >= 0 && newY < map.length;
+    }
+
+    private static void init() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int size = Integer.parseInt(br.readLine());
+        map = new int[size][size];
+        visited = new boolean[size][size];
+        for (int i = 0; i < size; i++) {
+            String line = br.readLine();
+            for (int j = 0; j < size; j++) {
+                map[i][j] = line.charAt(j) - '0';
+            }
+        }
+        answerList = new ArrayList<>();
+    }
 }
