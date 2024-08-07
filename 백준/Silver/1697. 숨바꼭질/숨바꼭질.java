@@ -3,44 +3,55 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.StringTokenizer;
 
 public class Main {
 
-	static int[] visited = new int[100001];
-	static int start, dest = 0;
-	
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		start = Integer.parseInt(st.nextToken());
-		dest = Integer.parseInt(st.nextToken());
-		if(start == dest) System.out.println(0);
-		else bfs(start);
-	}
-	
-	private static void bfs(int vertex) {
-		Queue<Integer> queue = new LinkedList<Integer>();
-		queue.add(vertex);
-		visited[vertex] = 1;
-		while (!queue.isEmpty()) {
-			int getVertex = queue.poll();
-			for (int i = 0; i < 3; i++) {
-				int step = 0;
-				if(i == 0) step = getVertex - 1;
-				else if(i == 1) step = getVertex + 1;
-				else step = getVertex * 2;
-				
-				if (step >= 0 && step < visited.length && visited[step] == 0) {
-					queue.add(step);
-					visited[step] = visited[getVertex] + 1;
-				}
-				if (step == dest) {
-					System.out.println(visited[getVertex]);
-					return;
-				}
-			}
-		}
-	}
+    private static int[] map;
+    private static boolean[] visited;
+    private static int N = 0, K = 0 ;
 
+    public static void main(String[] args) throws IOException {
+        init();
+        bfs(N);
+        printAnswer();
+    }
+
+    private static void printAnswer() {
+        System.out.println(map[K]);
+    }
+
+    private static void bfs(int point) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(point);
+        visited[point] = true;
+
+        while (!queue.isEmpty()) {
+            int getPoint = queue.poll();
+            for (int newPoint: getNextPoint(getPoint)) {
+                if (isValidMapSize(newPoint) && !visited[newPoint]) {
+                    queue.add(newPoint);
+                    visited[newPoint] = true;
+                    map[newPoint] = map[getPoint] + 1;
+                }
+            }
+        }
+    }
+
+    private static boolean isValidMapSize(int point) {
+        return point >= 0 && point < map.length;
+    }
+
+    private static int[] getNextPoint(int point) {
+        return new int[] {point + 1, point -1, point * 2};
+    }
+
+    private static void init() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = br.readLine().split(" ");
+        map = new int[100001];
+        visited = new boolean[map.length];
+        N = Integer.parseInt(input[0]);
+        K = Integer.parseInt(input[1]);
+        br.close();
+    }
 }
