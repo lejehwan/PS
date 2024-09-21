@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 class Main {
@@ -21,18 +22,13 @@ class Main {
     private static String solve() {
         Arrays.sort(revisedData);
 
-        int val = 0;
         for (int data : revisedData) {
-            if (!map.containsKey(data)) {
-                map.put(data, val++);
-            }
-        }
-        StringBuilder sb = new StringBuilder();
-        for (int data : originData) {
-            sb.append(map.get(data)).append(" ");
+            map.computeIfAbsent(data, k -> map.size());
         }
 
-        return sb.toString().trim();
+        return Arrays.stream(originData)
+                .mapToObj(data -> String.valueOf(map.get(data)))
+                .collect(Collectors.joining(" "));
     }
 
     private static void init() throws IOException {
