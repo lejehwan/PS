@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-
 class Main {
 
     static int[] trees;
@@ -20,15 +19,15 @@ class Main {
     }
 
     private static long binarySearch() {
+        Arrays.sort(trees);
         int low = 1;
         int high = trees[trees.length -  1];
         int result = 0;
+
         while(low <= high) {
             int mid = (low + high) / 2;
-            long sum = 0;
-            for (int tree : trees) {
-                sum += Math.max(tree - mid, 0);
-            }
+            long sum = getSum(mid);
+
             if (sum >= M) {
                 result = mid;
                 low = mid + 1;
@@ -36,7 +35,16 @@ class Main {
                 high = mid - 1;
             }
         }
+
         return result;
+    }
+
+    private static long getSum(int mid) {
+        long sum = 0;
+        for (int tree : trees) {
+            sum += Math.max(tree - mid, 0);
+        }
+        return sum;
     }
 
     private static void init() throws IOException {
@@ -49,7 +57,6 @@ class Main {
         for (int i = 0; i < N; i++) {
             trees[i] = Integer.parseInt(data[i]);
         }
-        Arrays.sort(trees);
         br.close();
     }
 
