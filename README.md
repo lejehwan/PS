@@ -22,3 +22,15 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1927.%E2%80%8
 ▶ 백준 2630번 색종이 만들기
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/2630.%E2%80%85%EC%83%89%EC%A2%85%EC%9D%B4%E2%80%85%EB%A7%8C%EB%93%A4%EA%B8%B0/%EC%83%89%EC%A2%85%EC%9D%B4%E2%80%85%EB%A7%8C%EB%93%A4%EA%B8%B0.java
 
+
+# 09.22
+▶ 백준 2805번 나무 자르기
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/2805.%E2%80%85%EB%82%98%EB%AC%B4%E2%80%85%EC%9E%90%EB%A5%B4%EA%B8%B0/%EB%82%98%EB%AC%B4%E2%80%85%EC%9E%90%EB%A5%B4%EA%B8%B0.java
+
+▶ 백준 11724번 연결 요소의 개수
+https://github.com/lejehwan/PS/blob/f11f34bf3abb4672176e57eee276f112f8141eb0/%EB%B0%B1%EC%A4%80/Silver/11724.%E2%80%85%EC%97%B0%EA%B2%B0%E2%80%85%EC%9A%94%EC%86%8C%EC%9D%98%E2%80%85%EA%B0%9C%EC%88%98/%EC%97%B0%EA%B2%B0%E2%80%85%EC%9A%94%EC%86%8C%EC%9D%98%E2%80%85%EA%B0%9C%EC%88%98.java
+
+▶ 백준 18870번 좌표 압축
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/18870.%E2%80%85%EC%A2%8C%ED%91%9C%E2%80%85%EC%95%95%EC%B6%95/%EC%A2%8C%ED%91%9C%E2%80%85%EC%95%95%EC%B6%95.java
+
+▶ leetcode.com 312. Burst Balloons
