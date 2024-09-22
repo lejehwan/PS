@@ -1,3 +1,16 @@
+# 08.25
+▶ 백준 1003번 피보나치 함수
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1003.%E2%80%85%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%E2%80%85%ED%95%A8%EC%88%98/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%E2%80%85%ED%95%A8%EC%88%98.java
+
+▶ 백준 1463번 1로 만들기
+
+▶ 백준 2579번 계단 오르기
+
+▶ 백준 2606번 바이러스
+
+▶ 백준 9095번 1, 2, 3 더하기
+
+
 # 09.08
 ▶ 백준 11659번 구간 합 구하기 4
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/11659.%E2%80%85%EA%B5%AC%EA%B0%84%E2%80%85%ED%95%A9%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0%E2%80%854/%EA%B5%AC%EA%B0%84%E2%80%85%ED%95%A9%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0%E2%80%854.java
