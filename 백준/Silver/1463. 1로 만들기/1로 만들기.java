@@ -15,12 +15,11 @@ class Main {
 
     private static int dpTopDown(int n) {
         if (n == 1) return 0;
-        if (dp[n] != 0) return dp[n];
+        if (dp[n] > 0) return dp[n];
 
-        int memo = dpTopDown(n - 1) + 1;
-        if (n % 3 == 0) memo = Math.min(memo, dpTopDown(n / 3) + 1);
-        if (n % 2 == 0) memo = Math.min(memo, dpTopDown(n / 2) + 1);
-        dp[n] = memo;
+        dp[n] = dpTopDown(n - 1) + 1;
+        if (n % 3 == 0) dp[n] = Math.min(dp[n], dpTopDown(n / 3) + 1);
+        if (n % 2 == 0) dp[n] = Math.min(dp[n], dpTopDown(n / 2) + 1);
         return dp[n];
     }
 
