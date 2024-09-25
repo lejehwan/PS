@@ -16,12 +16,15 @@ class Main {
     }
 
     private static String dpTopDown(int[] tc) {
+        Arrays.fill(dp, -1);
         return Arrays.stream(tc)
                 .mapToObj(t -> String.valueOf(topDown(t)))
                 .collect(Collectors.joining("\n"));
     }
 
     private static int topDown(int n) {
+        if (dp[n] > 0) return dp[n];
+
         if (n == 1) return 1;
         if (n == 2) return 2;
         if (n == 3) return 4;
