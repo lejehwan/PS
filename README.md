@@ -2,13 +2,25 @@
 ▶ 백준 1003번 피보나치 함수
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1003.%E2%80%85%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%E2%80%85%ED%95%A8%EC%88%98/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%E2%80%85%ED%95%A8%EC%88%98.java
 
-▶ 백준 1463번 1로 만들기
+▶ 백준 1463번 1로 만들기 -top down 시간초과
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1463.%E2%80%851%EB%A1%9C%E2%80%85%EB%A7%8C%EB%93%A4%EA%B8%B0/1%EB%A1%9C%E2%80%85%EB%A7%8C%EB%93%A4%EA%B8%B0.java
 
 ▶ 백준 2579번 계단 오르기
+https://github.com/lejehwan/PS/blob/588cb240bca064cb7a49bb5152f6e69b78b2e6d3/%EB%B0%B1%EC%A4%80/Silver/2579.%E2%80%85%EA%B3%84%EB%8B%A8%E2%80%85%EC%98%A4%EB%A5%B4%EA%B8%B0/%EA%B3%84%EB%8B%A8%E2%80%85%EC%98%A4%EB%A5%B4%EA%B8%B0.java
 
 ▶ 백준 2606번 바이러스
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/2606.%E2%80%85%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4/%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4.java
 
 ▶ 백준 9095번 1, 2, 3 더하기
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/9095.%E2%80%851%EF%BC%8C%E2%80%852%EF%BC%8C%E2%80%853%E2%80%85%EB%8D%94%ED%95%98%EA%B8%B0/1%EF%BC%8C%E2%80%852%EF%BC%8C%E2%80%853%E2%80%85%EB%8D%94%ED%95%98%EA%B8%B0.java
+
+
+# 09.01
+▶ 프로그래머스 Level 3 기둥과 보 설치 (2020 카카오 Blind Recruitment)
+
+▶ 프로그래머스 Level 2 광물 캐기
+
+▶ 프로그래머스 Level 2 주차 요금 계산 (2022 카카오 Blind Recruitment)
 
 
 # 09.08
