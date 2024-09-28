@@ -4,54 +4,50 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main {
+class Main {
 
-    private static int[] map;
-    private static boolean[] visited;
-    private static int N = 0, K = 0 ;
+    static int[] line = new int[100001];
+    static boolean[] visited = new boolean[line.length];
+    static int origin, destination;
 
     public static void main(String[] args) throws IOException {
         init();
-        bfs(N);
-        printAnswer();
+        bfs(origin);
+        System.out.println(line[destination]);
     }
 
-    private static void printAnswer() {
-        System.out.println(map[K]);
-    }
-
-    private static void bfs(int point) {
+    private static void bfs(int vertex) {
         Queue<Integer> queue = new LinkedList<>();
-        queue.offer(point);
-        visited[point] = true;
+        queue.add(vertex);
+        visited[vertex] = true;
 
         while (!queue.isEmpty()) {
-            int getPoint = queue.poll();
-            for (int newPoint: getNextPoint(getPoint)) {
-                if (isValidMapSize(newPoint) && !visited[newPoint]) {
-                    queue.add(newPoint);
-                    visited[newPoint] = true;
-                    map[newPoint] = map[getPoint] + 1;
+            int getVertex = queue.poll();
+            for (int newVertex: getSize(getVertex)) {
+                if (isValidLineSize(newVertex) && !visited[newVertex]) {
+                    queue.add(newVertex);
+                    visited[newVertex] = true;
+                    line[newVertex] = line[getVertex] + 1;
                 }
             }
         }
     }
 
-    private static boolean isValidMapSize(int point) {
-        return point >= 0 && point < map.length;
+    private static boolean isValidLineSize(int newVertex) {
+        return newVertex >= 0 && newVertex < line.length;
     }
 
-    private static int[] getNextPoint(int point) {
-        return new int[] {point + 1, point -1, point * 2};
+    private static int[] getSize(int getVertex) {
+        return new int[] {getVertex - 1, getVertex + 1, getVertex * 2};
     }
 
     private static void init() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] input = br.readLine().split(" ");
-        map = new int[100001];
-        visited = new boolean[map.length];
-        N = Integer.parseInt(input[0]);
-        K = Integer.parseInt(input[1]);
+        String[] data = br.readLine().split(" ");
+        origin = Integer.parseInt(data[0]);
+        destination = Integer.parseInt(data[1]);
         br.close();
     }
+
+
 }
