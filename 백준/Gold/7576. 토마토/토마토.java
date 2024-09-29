@@ -3,72 +3,70 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.StringTokenizer;
 
-public class Main {
+class Main {
 
-    static int row, col, answer = 0;
-    static int[][] graph;
+    static final int[] ADD_ROW = new int[] {-1, 1, 0, 0};
+    static final int[] ADD_COL = new int[] {0, 0, -1, 1};
+    static final int RIPE = 1;
+    static final int NOT_RIPE = 0;
+    static final int EMPTY = -1;
+    static int[][] box;
     static Queue<int[]> queue = new LinkedList<>();
-    static int[] addRow = {-1, 1, 0 ,0};
-    static int[] addCol = {0, 0, -1, 1};
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        row = Integer.parseInt(st.nextToken());
-        col = Integer.parseInt(st.nextToken());
-        graph = new int[col][row];
-        for (int i = 0; i < graph.length; i++) {
-            String[] inputLine = br.readLine().split(" ");
-            for (int j = 0; j < graph[i].length; j++) {
-                graph[i][j] = Integer.parseInt(inputLine[j]);
-                if (graph[i][j] == 1) {
-                    queue.add(new int[] {i, j});
-                }
-            }
-        }
+        init();
         bfs();
-        checkTomato();
-//        print();
+        int answer = getTomatoStatus();
+        System.out.println(answer);
     }
 
-    public static void checkTomato(){
-        for (int i = 0; i < graph.length; i++) {
-            for (int j = 0; j < graph[i].length; j++) {
-                if (graph[i][j] == 0) {
-                    System.out.println(-1);
-                    return;
-                }
-                answer = Math.max(answer, graph[i][j]);
+    private static int getTomatoStatus() {
+        int answer = 0;
+        for (int i = 0; i < box.length; i++) {
+            for (int j = 0; j < box[0].length; j++) {
+                if (box[i][j] == 0) return EMPTY;
+                answer = Math.max(answer, box[i][j]);
             }
         }
-        System.out.println(answer - 1);
+        return answer - 1;
     }
 
-    public static void bfs(){
-        while (!queue.isEmpty()){
-            int getXVertex = queue.peek()[0];
-            int getYVertex = queue.peek()[1];
+    private static void bfs() {
+        while (!queue.isEmpty()) {
+            int getX = queue.peek()[0];
+            int getY = queue.peek()[1];
             queue.poll();
-            for (int i = 0; i < addRow.length; i++) {
-                int newXVertex = getXVertex + addRow[i];
-                int newYVertex = getYVertex + addCol[i];
-                if (newXVertex >= 0 && newXVertex < col && newYVertex >= 0 && newYVertex < row){
-                    if (graph[newXVertex][newYVertex] == 0){
-                        queue.add(new int[] {newXVertex, newYVertex});
-                        graph[newXVertex][newYVertex] = graph[getXVertex][getYVertex] + 1;
-                    }
+            for (int i = 0; i < ADD_ROW.length; i++) {
+                int newX = getX + ADD_ROW[i];
+                int newY = getY + ADD_COL[i];
+                if (isValidBoxSize(newX, newY) && box[newX][newY] == NOT_RIPE) {
+                    queue.add(new int[] {newX, newY});
+                    box[newX][newY] = box[getX][getY] + 1;
                 }
             }
         }
     }
 
-    public static void print(){
-        for (int i = 0; i < graph.length; i++) {
-            for (int j = 0; j < graph[i].length; j++) {
-                System.out.print(graph[i][j] + " ");
+    private static boolean isValidBoxSize(int x, int y) {
+        return x >= 0 && x < box.length && y >= 0 && y < box[0].length;
+    }
+
+    private static void init() throws IOException {
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String[] data = br.readLine().split(" ");
+            int M = Integer.parseInt(data[0]);
+            int N = Integer.parseInt(data[1]);
+            box = new int[N][M];
+            for (int i = 0; i < box.length; i++) {
+                String[] input = br.readLine().split(" ");
+                for (int j = 0; j < box[0].length; j++) {
+                    int temp = Integer.parseInt(input[j]);
+                    if (temp == RIPE) queue.add(new int[] {i, j});
+                    box[i][j] = temp;
+                }
             }
-            System.out.println();
         }
     }
+
 }
