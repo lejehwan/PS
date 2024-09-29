@@ -59,3 +59,15 @@ https://github.com/lejehwan/PS/blob/f11f34bf3abb4672176e57eee276f112f8141eb0/%EB
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/18870.%E2%80%85%EC%A2%8C%ED%91%9C%E2%80%85%EC%95%95%EC%B6%95/%EC%A2%8C%ED%91%9C%E2%80%85%EC%95%95%EC%B6%95.java
 
 ▶ leetcode.com 312. Burst Balloons
+
+
+# 09.29
+▶ 백준 1697번 숨바꼭질
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1697.%E2%80%85%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88/%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88.java
+
+▶ 백준 1931번 회의실 배정
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1931.%E2%80%85%ED%9A%8C%EC%9D%98%EC%8B%A4%E2%80%85%EB%B0%B0%EC%A0%95/%ED%9A%8C%EC%9D%98%EC%8B%A4%E2%80%85%EB%B0%B0%EC%A0%95.java
+
+▶ 백준 14940번 쉬운 최단거리
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/14940.%E2%80%85%EC%89%AC%EC%9A%B4%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC/%EC%89%AC%EC%9A%B4%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC.java
+
