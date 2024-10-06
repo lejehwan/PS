@@ -71,3 +71,16 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1931.%E2%80%8
 ▶ 백준 14940번 쉬운 최단거리
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/14940.%E2%80%85%EC%89%AC%EC%9A%B4%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC/%EC%89%AC%EC%9A%B4%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC.java
 
+
+# 10.06
+▶ 백준 1074번 Z
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1074.%E2%80%85Z/Z.java
+
+▶ 백준 7569번 토마토
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/7569.%E2%80%85%ED%86%A0%EB%A7%88%ED%86%A0/%ED%86%A0%EB%A7%88%ED%86%A0.java
+
+▶ 백준 7576번 토마토
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/7576.%E2%80%85%ED%86%A0%EB%A7%88%ED%86%A0/%ED%86%A0%EB%A7%88%ED%86%A0.java
+
+▶ 백준 5430번 AC
+
