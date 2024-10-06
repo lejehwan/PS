@@ -1,33 +1,49 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public class Main {
-    static int[] arr;
-    static int n = 0, m = 0;
-    static StringBuilder sb;
+class Main {
+
+    static int N, M;
+    static int[] answer;
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] input = br.readLine().split(" ");
-        n = Integer.parseInt(input[0]);
-        m = Integer.parseInt(input[1]);
-        arr = new int[m];
-        sb = new StringBuilder();
-        dfs(0, 1);
-        System.out.println(sb.toString());
+        init();
+        backTracking(0, 1);
+        System.out.println(sb);
     }
 
-    private static void dfs(int depth, int crt) {
-        if (depth == m) {
-            for (int val : arr) {
-                sb.append(val).append(" ");
-            }
-            sb.append("\n");
+    private static void backTracking(int depth, int current) {
+        if (depth == M) {
+            answerPrint();
             return;
         }
 
-        for (int i = crt; i <= n; i++) {
-            arr[depth] = i;
-            dfs(depth + 1, i + 1);
+        for (int i = current; i <= N; i++) {
+            answer[depth] = i;
+            backTracking(depth + 1, i + 1);
         }
     }
+
+    private static void answerPrint() {
+        sb.append(
+                IntStream.of(answer)
+                        .mapToObj(String::valueOf)
+                        .collect(Collectors.joining(" "))
+        ).append("\n");
+
+    }
+
+    private static void init() throws IOException {
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String[] data = br.readLine().split(" ");
+            N = Integer.parseInt(data[0]);
+            M = Integer.parseInt(data[1]);
+            answer = new int[M];
+        }
+    }
+
 }
