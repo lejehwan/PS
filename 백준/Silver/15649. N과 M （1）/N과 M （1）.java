@@ -1,38 +1,54 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public class Main {
+class Main {
+
+    static int N, M;
+    static int[] answer;
     static boolean[] visited;
-    static int[] arr;
-    static int n = 0, m = 0;
-    static StringBuilder sb;
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] input = br.readLine().split(" ");
-        n = Integer.parseInt(input[0]);
-        m = Integer.parseInt(input[1]);
-        arr = new int[m];
-        visited = new boolean[n];
-        sb = new StringBuilder();
-        dfs(0);
-        System.out.println(sb.toString());
+        init();
+        backTracking(0);
+        System.out.println(sb);
     }
 
-    private static void dfs(int depth) {
-        if (depth == m) {
-            for (int val : arr) {
-                sb.append(val).append(" ");
-            }
-            sb.append("\n");
+    private static void backTracking(int depth) {
+        if (depth == M) {
+            answerPrint();
             return;
         }
-        for (int i = 0; i < n; i++) {
+
+        for (int i = 0; i < N; i++) {
             if (!visited[i]) {
+                answer[depth] = i + 1;
                 visited[i] = true;
-                arr[depth] = i + 1;
-                dfs(depth + 1);
+                backTracking(depth + 1);
                 visited[i] = false;
             }
+        }
+    }
+
+    private static void answerPrint() {
+        sb.append(
+                IntStream.of(answer)
+                        .mapToObj(String::valueOf)
+                        .collect(Collectors.joining(" "))
+        ).append("\n");
+
+    }
+
+    private static void init() throws IOException {
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String[] data = br.readLine().split(" ");
+            N = Integer.parseInt(data[0]);
+            M = Integer.parseInt(data[1]);
+            answer = new int[M];
+            visited = new boolean[N];
         }
     }
 
