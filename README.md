@@ -61,6 +61,7 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/18870.%E2%80%
 ▶ leetcode.com 312. Burst Balloons
 
 
+
 # 09.29
 ▶ 백준 1697번 숨바꼭질
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1697.%E2%80%85%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88/%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88.java
@@ -83,4 +84,30 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/7569.%E2%80%85%
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/7576.%E2%80%85%ED%86%A0%EB%A7%88%ED%86%A0/%ED%86%A0%EB%A7%88%ED%86%A0.java
 
 ▶ 백준 5430번 AC
+
+
+
+# 10.13
+▶ 백준 15650번 N과 M (2)
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/15650.%E2%80%85N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%882%EF%BC%89/N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%882%EF%BC%89.java
+
+▶ 백준 15652번 N과 M (4)
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/15652.%E2%80%85N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%884%EF%BC%89/N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%884%EF%BC%89.java
+
+▶ 백준 15654번 N과 M (5)
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/15654.%E2%80%85N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%885%EF%BC%89/N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%885%EF%BC%89.java
+
+
+# 10.20
+▶ 백준 11053번 가장 긴 증가하는 부분 수열
+https://www.acmicpc.net/problem/11053
+
+▶ 백준 11725번 트리의 부모 찾기
+https://www.acmicpc.net/problem/11725
+
+▶ 백준 15663번 N과 M (9)
+https://www.acmicpc.net/problem/15663
+
+▶ 백준 15666번 N과 M (12)
+https://www.acmicpc.net/problem/15666
 
