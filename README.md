@@ -100,14 +100,15 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/15654.%E2%80%
 
 # 10.20
 ▶ 백준 11053번 가장 긴 증가하는 부분 수열
-https://www.acmicpc.net/problem/11053
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/11053.%E2%80%85%EA%B0%80%EC%9E%A5%E2%80%85%EA%B8%B4%E2%80%85%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%E2%80%85%EB%B6%80%EB%B6%84%E2%80%85%EC%88%98%EC%97%B4/%EA%B0%80%EC%9E%A5%E2%80%85%EA%B8%B4%E2%80%85%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%E2%80%85%EB%B6%80%EB%B6%84%E2%80%85%EC%88%98%EC%97%B4.java
 
 ▶ 백준 11725번 트리의 부모 찾기
-https://www.acmicpc.net/problem/11725
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/11725.%E2%80%85%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EB%B6%80%EB%AA%A8%E2%80%85%EC%B0%BE%EA%B8%B0/%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EB%B6%80%EB%AA%A8%E2%80%85%EC%B0%BE%EA%B8%B0.java
 
 ▶ 백준 15663번 N과 M (9)
-https://www.acmicpc.net/problem/15663
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/15663.%E2%80%85N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%889%EF%BC%89/N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%889%EF%BC%89.java
 
 ▶ 백준 15666번 N과 M (12)
-https://www.acmicpc.net/problem/15666
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/15666.%E2%80%85N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%8812%EF%BC%89/N%EA%B3%BC%E2%80%85M%E2%80%85%EF%BC%8812%EF%BC%89.java
+
 
