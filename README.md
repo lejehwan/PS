@@ -114,10 +114,11 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/15666.%E2%80%
 
 # 10.27
 ▶ 백준 1149번 RGB거리
-https://www.acmicpc.net/problem/1149
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1149.%E2%80%85RGB%EA%B1%B0%EB%A6%AC/RGB%EA%B1%B0%EB%A6%AC.java
 
 ▶ 백준 1629번 곱셈
-https://www.acmicpc.net/problem/1629
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1629.%E2%80%85%EA%B3%B1%EC%85%88/%EA%B3%B1%EC%85%88.java
 
 ▶ 백준 1932번 정수 삼각형
-https://www.acmicpc.net/problem/1932
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/1932.%E2%80%85%EC%A0%95%EC%88%98%E2%80%85%EC%82%BC%EA%B0%81%ED%98%95/%EC%A0%95%EC%88%98%E2%80%85%EC%82%BC%EA%B0%81%ED%98%95.java
+
