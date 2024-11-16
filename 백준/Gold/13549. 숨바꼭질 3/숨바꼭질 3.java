@@ -62,6 +62,8 @@ class Main {
             Node node = pq.poll();
             int now = node.position;
             if (now == K) return node.time;
+            if (visited[now]) continue;
+            visited[now] = true;
             for (int[] move : movesWithWeight(now)) {
                 int next = move[0];
                 int weight = move[1];
