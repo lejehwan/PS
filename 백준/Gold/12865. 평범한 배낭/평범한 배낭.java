@@ -6,7 +6,7 @@ class Main {
 
     private static int N, K;
     private static int[][] thingsCandidate;
-    private static int[] w, v;
+    private static int[] weights, values;
 
     public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
@@ -19,14 +19,14 @@ class Main {
 //                thingsCandidate[i][0] = Integer.parseInt(data[0]);
 //                thingsCandidate[i][1] = Integer.parseInt(data[1]);
 //            }
-//            System.out.println(knapsack_twoDimensionArray());
+//            System.out.println(knapsack_origin());
 
-            w = new int[N + 1];
-            v = new int[N + 1];
+            weights = new int[N + 1];
+            values = new int[N + 1];
             for (int i = 1; i <= N; i++) {
                 String[] data = br.readLine().split(" ");
-                w[i] = Integer.parseInt(data[0]);
-                v[i] = Integer.parseInt(data[1]);
+                weights[i] = Integer.parseInt(data[0]);
+                values[i] = Integer.parseInt(data[1]);
             }
             System.out.println(knapsack_oneDimensionArray());
         }
@@ -46,21 +46,11 @@ class Main {
         return dp[N][K];
     }
 
-    private static int knapsack_twoDimensionArray() {
-        int[][] dp = new int[N + 1][K + 1];
-        for (int i = 1; i < N + 1; i++) {
-            for (int j = K; j >= thingsCandidate[i][0]; j--) {
-                dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - thingsCandidate[i][0]] + thingsCandidate[i][1]);
-            }
-        }
-        return dp[N][K];
-    }
-
     private static int knapsack_oneDimensionArray() {
         int[] dp = new int[K + 1];
         for (int i = 1; i < N + 1; i++) {
-            for (int j = K; j >= w[i]; j--) {
-                dp[j] = Math.max(dp[j], dp[j - w[i]] + v[i]);
+            for (int j = K; j >= weights[i]; j--) {
+                dp[j] = Math.max(dp[j], dp[j - weights[i]] + values[i]);
             }
         }
         return dp[K];
