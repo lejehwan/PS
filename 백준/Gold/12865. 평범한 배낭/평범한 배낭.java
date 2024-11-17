@@ -1,35 +1,69 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-// i(몇번줄 탐색 )
-// ↓
-//   0 1 2 3 4 5  6  7 => dp(수용 가능한 무게)
-// 1 0 0 0 0 0 0  13 13         
-// 2 0 0 0 0 8 8  13 13        
-// 3 0 0 0 6 8 8  13 14         
-// 4 0 0 0 6 8 12 13 14
-// W의 i번째 > K	=> f(i-1,k)
-// 0 < i and W의 i번째 < K		=> max( f(i-1,K-W의 i번째) + V의 i번째 , f(i-1,K) )
-// (앞전에 구한 가치)와 (최대 무게에서 자신의 무게를 뺏을 경우 남은 무게로 담을수 있는 가치)와 더해 더 큰 값을 저장
+class Main {
 
-public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int k = sc.nextInt();
-		int[] w = new int[n + 1];
-		int[] v = new int[n + 1];
-		for (int i = 1; i < v.length; i++) {
-			w[i] = sc.nextInt();
-			v[i] = sc.nextInt();
-		}
-		int[] dp = new int[k + 1];
-		for (int i = 1; i < v.length; i++) {
-			// k 부터 탐색하여 담을 수 있는 무게 한계치가 넘지 않을 때 까지 반복
-			for (int j = k; j - w[i] >= 0; j--) {
-				dp[j] = Math.max(dp[j], dp[j - w[i]] + v[i]);
-			}
-		}
-		System.out.println(dp[k]);
-		sc.close();
-	}
+    private static int N, K;
+    private static int[][] thingsCandidate;
+    private static int[] w, v;
+
+    public static void main(String[] args) throws IOException {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            String[] input = br.readLine().split(" ");
+            N = Integer.parseInt(input[0]);
+            K = Integer.parseInt(input[1]);
+            thingsCandidate = new int[N + 1][2];
+            for (int i = 1; i <= N; i++) {
+                String[] data = br.readLine().split(" ");
+                thingsCandidate[i][0] = Integer.parseInt(data[0]);
+                thingsCandidate[i][1] = Integer.parseInt(data[1]);
+            }
+            System.out.println(knapsack_origin());
+
+//            w = new int[N + 1];
+//            v = new int[N + 1];
+//            for (int i = 1; i <= N; i++) {
+//                String[] data = br.readLine().split(" ");
+//                w[i] = Integer.parseInt(data[0]);
+//                v[i] = Integer.parseInt(data[1]);
+//            }
+//            System.out.println(knapsack_oneDimensionArray());
+        }
+    }
+
+    private static int knapsack_origin() {
+        int[][] dp = new int[N + 1][K + 1];
+        for (int i = 1; i < N + 1; i++) {
+            for (int j = 1; j < K + 1; j++) {
+                if (j < thingsCandidate[i][0]) {
+                    dp[i][j] = dp[i - 1][j];
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - thingsCandidate[i][0]] + thingsCandidate[i][1]);
+                }
+            }
+        }
+        return dp[N][K];
+    }
+
+    private static int knapsack_twoDimensionArray() {
+        int[][] dp = new int[N + 1][K + 1];
+        for (int i = 1; i < N + 1; i++) {
+            for (int j = K; j >= thingsCandidate[i][0]; j--) {
+                dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - thingsCandidate[i][0]] + thingsCandidate[i][1]);
+            }
+        }
+        return dp[N][K];
+    }
+
+    private static int knapsack_oneDimensionArray() {
+        int[] dp = new int[K + 1];
+        for (int i = 1; i < N + 1; i++) {
+            for (int j = K; j >= w[i]; j--) {
+                dp[j] = Math.max(dp[j], dp[j - w[i]] + v[i]);
+            }
+        }
+        return dp[K];
+    }
+
 }
