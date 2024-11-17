@@ -13,22 +13,22 @@ class Main {
             String[] input = br.readLine().split(" ");
             N = Integer.parseInt(input[0]);
             K = Integer.parseInt(input[1]);
-            thingsCandidate = new int[N + 1][2];
-            for (int i = 1; i <= N; i++) {
-                String[] data = br.readLine().split(" ");
-                thingsCandidate[i][0] = Integer.parseInt(data[0]);
-                thingsCandidate[i][1] = Integer.parseInt(data[1]);
-            }
-            System.out.println(knapsack_origin());
-
-//            w = new int[N + 1];
-//            v = new int[N + 1];
+//            thingsCandidate = new int[N + 1][2];
 //            for (int i = 1; i <= N; i++) {
 //                String[] data = br.readLine().split(" ");
-//                w[i] = Integer.parseInt(data[0]);
-//                v[i] = Integer.parseInt(data[1]);
+//                thingsCandidate[i][0] = Integer.parseInt(data[0]);
+//                thingsCandidate[i][1] = Integer.parseInt(data[1]);
 //            }
-//            System.out.println(knapsack_oneDimensionArray());
+//            System.out.println(knapsack_twoDimensionArray());
+
+            w = new int[N + 1];
+            v = new int[N + 1];
+            for (int i = 1; i <= N; i++) {
+                String[] data = br.readLine().split(" ");
+                w[i] = Integer.parseInt(data[0]);
+                v[i] = Integer.parseInt(data[1]);
+            }
+            System.out.println(knapsack_oneDimensionArray());
         }
     }
 
