@@ -132,3 +132,20 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/9465.%E2%80%8
 
 ▶ 백준 11660번 구간 합 구하기 5
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/11660.%E2%80%85%EA%B5%AC%EA%B0%84%E2%80%85%ED%95%A9%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0%E2%80%855/%EA%B5%AC%EA%B0%84%E2%80%85%ED%95%A9%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0%E2%80%855.java
+
+
+# 11.17 -> djs(다익스트라), dp(Knapsack, LIS:longest increasing subsequence(최장 증가 부분수열), LCS:longest common subsequence(최장 공통 부분수열))
+▶ 백준 9251번 LCS
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/9251.%E2%80%85LCS/LCS.java
+
+▶ 백준 12865번 평범한 배낭 v2
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/12865.%E2%80%85%ED%8F%89%EB%B2%94%ED%95%9C%E2%80%85%EB%B0%B0%EB%82%AD/%ED%8F%89%EB%B2%94%ED%95%9C%E2%80%85%EB%B0%B0%EB%82%AD.java
+
+▶ 백준 13549번 숨바꼭질 3
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/13549.%E2%80%85%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88%E2%80%853/%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88%E2%80%853.java
+
+
+
+
+
+
