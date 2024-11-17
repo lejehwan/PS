@@ -134,7 +134,7 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/9465.%E2%80%8
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Silver/11660.%E2%80%85%EA%B5%AC%EA%B0%84%E2%80%85%ED%95%A9%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0%E2%80%855/%EA%B5%AC%EA%B0%84%E2%80%85%ED%95%A9%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0%E2%80%855.java
 
 
-# 11.17 -> djs(다익스트라), dp(Knapsack, LIS:longest increasing subsequence(최장 증가 부분수열), LCS:longest common subsequence(최장 공통 부분수열))
+# 11.17
 ▶ 백준 9251번 LCS
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/9251.%E2%80%85LCS/LCS.java
 
