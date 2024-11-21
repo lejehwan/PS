@@ -1,9 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 import java.util.stream.Stream;
 
 class Main {
@@ -11,6 +9,8 @@ class Main {
     static int[][] map;
     static int[][] tempMap;
     static int answer = 0;
+    static List<int[]> emptySpaces = new ArrayList<>();
+    static List<int[]> viruses = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
@@ -22,39 +22,34 @@ class Main {
                 String[] data = br.readLine().split(" ");
                 for (int j = 0; j < M; j++) {
                     map[i][j] = Integer.parseInt(data[j]);
+                    if (map[i][j] == 0) emptySpaces.add(new int[]{i, j});
+                    else if (map[i][j] == 2) viruses.add(new int[]{i, j});
                 }
             }
-            canBuildWalls(0);
+            canBuildWalls(0, 0, new int[3][2]);
             System.out.println(answer);
         }
     }
 
-    private static void canBuildWalls(int depth) {
+    private static void canBuildWalls(int start, int depth, int[][] selectedWalls) {
         if (depth == 3) {
+            tempMap = Stream.of(map).map(int[]::clone).toArray(int[][]::new);
+            for (int[] wall : selectedWalls) {
+                tempMap[wall[0]][wall[1]] = 1;
+            }
             findVirus();
             answer = Math.max(answer, findSafeArea());
             return;
         }
 
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[0].length; j++) {
-                if (map[i][j] == 0) {
-                    map[i][j] = 1;
-                    canBuildWalls(depth + 1);
-                    map[i][j] = 0;
-                }
-            }
+        for (int i = start; i < emptySpaces.size(); i++) {
+            selectedWalls[depth] = emptySpaces.get(i);
+            canBuildWalls(i + 1, depth + 1, selectedWalls);
         }
     }
 
     private static void findVirus() {
-        tempMap = Stream.of(map).map(int[]::clone).toArray(int[][]::new);
-        Queue<int[]> queue = new LinkedList<>();
-        for (int i = 0; i < tempMap.length; i++) {
-            for (int j = 0; j < tempMap[0].length; j++) {
-                if (tempMap[i][j] == 2) queue.add(new int[] {i, j});
-            }
-        }
+        Queue<int[]> queue = new LinkedList<>(viruses);
         spreadVirus(queue);
     }
 
@@ -63,11 +58,9 @@ class Main {
         int[] addY = new int[] {0, 0, 1, -1};
         while (!queue.isEmpty()) {
             int[] getQueue = queue.poll();
-            int getX = getQueue[0];
-            int getY = getQueue[1];
             for (int i = 0; i < addX.length; i++) {
-                int newX = getX + addX[i];
-                int newY = getY + addY[i];
+                int newX = getQueue[0] + addX[i];
+                int newY = getQueue[1] + addY[i];
                 if (isValidMapSize(newX, newY) && tempMap[newX][newY] == 0) {
                     tempMap[newX][newY] = 2;
                     queue.add(new int[] {newX, newY});
