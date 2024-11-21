@@ -24,12 +24,12 @@ class Main {
                     map[i][j] = Integer.parseInt(data[j]);
                 }
             }
-            canBuildWalls(0, 0);
+            canBuildWalls(0);
             System.out.println(answer);
         }
     }
 
-    private static void canBuildWalls(int start, int depth) {
+    private static void canBuildWalls(int depth) {
         if (depth == 3) {
             findVirus();
             answer = Math.max(answer, findSafeArea());
@@ -40,7 +40,7 @@ class Main {
             for (int j = 0; j < map[0].length; j++) {
                 if (map[i][j] == 0) {
                     map[i][j] = 1;
-                    canBuildWalls(start + 1, depth + 1);
+                    canBuildWalls(depth + 1);
                     map[i][j] = 0;
                 }
             }
