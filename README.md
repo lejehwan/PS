@@ -145,7 +145,9 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/12865.%E2%80%85
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/13549.%E2%80%85%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88%E2%80%853/%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88%E2%80%853.java
 
 
-
+# 11.24
+▶ 백준 14502 연구소
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/14502.%E2%80%85%EC%97%B0%EA%B5%AC%EC%86%8C/%EC%97%B0%EA%B5%AC%EC%86%8C.java
 
 
 
