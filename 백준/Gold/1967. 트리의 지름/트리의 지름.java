@@ -26,7 +26,7 @@ public class Main {
         }
     }
 
-    static List<ArrayList<Node>> graph = new ArrayList<>();
+    static List<ArrayList<Node>> tree = new ArrayList<>();
     static boolean[] visited;
     static Node maxNode;
 
@@ -34,15 +34,15 @@ public class Main {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             int n = Integer.parseInt(br.readLine());
             for (int i = 0; i < n + 1; i++) {
-                graph.add(new ArrayList<>());
+                tree.add(new ArrayList<>());
             }
             for (int i = 0; i < n - 1; i++) {
                 String[] input = br.readLine().split(" ");
                 int startV = Integer.parseInt(input[0]);
                 int endV = Integer.parseInt(input[1]);
                 int weight = Integer.parseInt(input[2]);
-                graph.get(startV).add(new Node(endV, weight));
-                graph.get(endV).add(new Node(startV, weight));
+                tree.get(startV).add(new Node(endV, weight));
+                tree.get(endV).add(new Node(startV, weight));
             }
 
             visited = new boolean[n + 1];
@@ -70,7 +70,7 @@ public class Main {
 
             if (getWeight > maxNode.weight) maxNode = getNode;
 
-            for (Node node : graph.get(getVertex)) {
+            for (Node node : tree.get(getVertex)) {
                 if (!visited[node.vertex]) {
                     visited[node.vertex] = true;
                     queue.add(new Node(node.vertex, getWeight + node.weight));
