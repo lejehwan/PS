@@ -150,6 +150,16 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/13549.%E2%80%85
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/14502.%E2%80%85%EC%97%B0%EA%B5%AC%EC%86%8C/%EC%97%B0%EA%B5%AC%EC%86%8C.java
 
 ▶백준 14503번 로봇 청소기
-https://github.com/lejehwan/PS_study/blob/main/%EB%B0%B1%EC%A4%80%2014503%EB%B2%88%20%EB%A1%9C%EB%B4%87%20%EC%B2%AD%EC%86%8C%EA%B8%B0/%EB%A1%9C%EB%B4%87%20%EC%B2%AD%EC%86%8C%EA%B8%B0.java
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/14503.%E2%80%85%EB%A1%9C%EB%B4%87%E2%80%85%EC%B2%AD%EC%86%8C%EA%B8%B0/%EB%A1%9C%EB%B4%87%E2%80%85%EC%B2%AD%EC%86%8C%EA%B8%B0.java
 
+
+# 12.01
+▶ 백준 1753번 최단경로
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1753.%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C.java
+
+▶ 백준 1967번 트리의 지름
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1967.%E2%80%85%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EC%A7%80%EB%A6%84/%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EC%A7%80%EB%A6%84.java
+
+▶ 백준 9663번 N-Queen
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/9663.%E2%80%85N%EF%BC%8DQueen/N%EF%BC%8DQueen.java
 
