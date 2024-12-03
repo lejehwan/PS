@@ -163,3 +163,11 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1967.%E2%80%85%
 ▶ 백준 9663번 N-Queen
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/9663.%E2%80%85N%EF%BC%8DQueen/N%EF%BC%8DQueen.java
 
+
+# 12.08
+▶ 백준 11404번 플로이드
+
+▶ 백준 1238번 파티
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1238.%E2%80%85%ED%8C%8C%ED%8B%B0/%ED%8C%8C%ED%8B%B0.java
+
+▶ 백준 1865번 웜홀
