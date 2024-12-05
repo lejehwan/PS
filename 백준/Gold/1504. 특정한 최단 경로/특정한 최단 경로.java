@@ -40,27 +40,22 @@ public class Main {
             int necessaryV1 = Integer.parseInt(input[0]);
             int necessaryV2 = Integer.parseInt(input[1]);
 
-            int answer = findSpecificShortestPath(necessaryV1, necessaryV2);
-            System.out.println(answer);
+            int route1 = findSpecificShortestPath(necessaryV1, necessaryV2);
+            int route2 = findSpecificShortestPath(necessaryV2, necessaryV1);
+            int result = Math.min(route1, route2);
+            System.out.println(result == INF ?  -1 : result);
         }
     }
 
     private static int findSpecificShortestPath(int necessaryV1, int necessaryV2) {
-        int startV = 1;
-        int startVToNecessaryV1 = dijkstra(startV, necessaryV1);
-        int necessaryV1ToNecessaryV2 = dijkstra(necessaryV1, necessaryV2);
-        int necessaryV2ToN = dijkstra(necessaryV2, N);
-        int case1Result = (startVToNecessaryV1 == INF || necessaryV1ToNecessaryV2 == INF || necessaryV2ToN == INF) ?
-                INF : startVToNecessaryV1 + necessaryV1ToNecessaryV2 + necessaryV2ToN;
+        int startVToNecessaryV = dijkstra(1, necessaryV1);
+        int necessaryVToNecessaryV = dijkstra(necessaryV1, necessaryV2);
+        int necessaryVToN = dijkstra(necessaryV2, N);
 
-        int startVToNecessaryV2 = dijkstra(startV, necessaryV2);
-        int necessaryV2ToNecessaryV1 = dijkstra(necessaryV2, necessaryV1);
-        int necessaryV1ToN = dijkstra(necessaryV1, N);
-        int case2Result = (startVToNecessaryV2 == INF || necessaryV2ToNecessaryV1 == INF || necessaryV1ToN == INF)
-                ? INF : startVToNecessaryV2 + necessaryV2ToNecessaryV1 + necessaryV1ToN;
-
-        int answer = Math.min(case1Result, case2Result);
-        return answer == INF ?  -1 : answer;
+        if (startVToNecessaryV == INF || necessaryVToNecessaryV == INF || necessaryVToN == INF) {
+            return INF;
+        }
+        return startVToNecessaryV + necessaryVToNecessaryV + necessaryVToN;
     }
 
     private static int dijkstra(int fromV, int toV) {
@@ -86,10 +81,7 @@ public class Main {
                 }
             }
         }
-
         return dist[toV];
-
     }
-
 
 }
