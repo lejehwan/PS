@@ -176,3 +176,8 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1238.%E2%80%85%
 
 ▶ 백준 1504번 특정한 최단 경로
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1504.%E2%80%85%ED%8A%B9%EC%A0%95%ED%95%9C%E2%80%85%EC%B5%9C%EB%8B%A8%E2%80%85%EA%B2%BD%EB%A1%9C/%ED%8A%B9%EC%A0%95%ED%95%9C%E2%80%85%EC%B5%9C%EB%8B%A8%E2%80%85%EA%B2%BD%EB%A1%9C.java
+
+▶ 백준 1956번 운동
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1956.%E2%80%85%EC%9A%B4%EB%8F%99/%EC%9A%B4%EB%8F%99.java
+
+
