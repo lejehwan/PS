@@ -28,7 +28,7 @@ public class Main {
 
             floydWarshall();
             int answer = findShortestCycle();
-            System.out.println(answer != INF ? answer : -1);
+            System.out.println(answer);
         }
     }
 
@@ -36,12 +36,12 @@ public class Main {
         int answer = INF;
         for (int i = 1; i < V + 1; i++) {
             for (int j = 1; j < V + 1; j++) {
-                if (dist[i][j] != INF && dist[i][j] != 0 && dist[j][i] != INF && dist[j][i] != 0) {
+                if (dist[i][j] != INF && dist[j][i] != INF && i != j) {
                     answer = Math.min(answer, dist[i][j] + dist[j][i]);
                 }
             }
         }
-        return answer;
+        return answer != INF ? answer : -1;
     }
 
     private static void floydWarshall() {
