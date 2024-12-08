@@ -59,7 +59,7 @@ public class Main {
 
         for (int i = 1; i <= N; i++) {
             for (Node node : graph) {
-                if (distance[node.fromV] != Long.MAX_VALUE && distance[node.fromV] + node.weight < distance[node.toV]) {
+                if (distance[node.fromV] + node.weight < distance[node.toV]) {
                     distance[node.toV] = distance[node.fromV] + node.weight;
                     if (i == N) return true;
                 }
