@@ -3,7 +3,18 @@ import java.util.*;
 
 public class Main {
 
-    static int[][] dist;
+    static class Node {
+        int fromV;
+        int toV;
+        int weight;
+        public Node(int fromV, int toV, int weight) {
+            this.fromV = fromV;
+            this.toV = toV;
+            this.weight = weight;
+        }
+    }
+
+    static List<Node> graph;
     static int N, INF = Integer.MAX_VALUE;
 
     public static void main(String[] args) throws IOException {
@@ -15,27 +26,21 @@ public class Main {
                 N = Integer.parseInt(data[0]);
                 int M = Integer.parseInt(data[1]);
                 int W = Integer.parseInt(data[2]);
-                dist = new int[N + 1][N + 1];
-                for (int j = 0; j < N + 1; j++) {
-                    for (int k = 0; k < N + 1; k++) {
-                        if (j == k) dist[j][k] = 0;
-                        else dist[j][k] = INF;
-                    }
-                }
+                graph = new ArrayList<>();
                 for (int j = 0; j < M; j++) {
                     String[] input = br.readLine().split(" ");
                     int S = Integer.parseInt(input[0]);
                     int E = Integer.parseInt(input[1]);
                     int T = Integer.parseInt(input[2]);
-                    dist[S][E] = Math.min(dist[S][E], T);
-                    dist[E][S] = Math.min(dist[E][S], T);
+                    graph.add(new Node(S, E, T));
+                    graph.add(new Node(E, S, T));
                 }
                 for (int j = 0; j < W; j++) {
                     String[] input = br.readLine().split(" ");
                     int S = Integer.parseInt(input[0]);
                     int E = Integer.parseInt(input[1]);
                     int T = Integer.parseInt(input[2]);
-                    dist[S][E] = Math.min(dist[S][E], -T);
+                    graph.add(new Node(S, E, -T));
                 }
                 if (findNegativeCycle()){
                     sb.append("YES").append("\n");
@@ -48,19 +53,16 @@ public class Main {
     }
 
     private static boolean findNegativeCycle() {
-        for (int via = 1; via < N + 1; via++) {
-            for (int from = 1; from < N + 1; from++) {
-                for (int to = 1; to < N + 1; to++) {
-                    if (dist[from][via] != INF && dist[via][to] != INF) {
-                        dist[from][to] = Math.min(dist[from][to], dist[from][via] + dist[via][to]);
-                    }
-                }
-            }
-        }
+        long[] distance = new long[N + 1];
+        Arrays.fill(distance, INF);
+        distance[1] = 0;
 
-        for (int i = 1; i < N + 1; i++) {
-            if (dist[i][i] < 0) {
-                return true;
+        for (int i = 1; i <= N; i++) {
+            for (Node node : graph) {
+                if (distance[node.fromV] != Long.MAX_VALUE && distance[node.fromV] + node.weight < distance[node.toV]) {
+                    distance[node.toV] = distance[node.fromV] + node.weight;
+                    if (i == N) return true;
+                }
             }
         }
         return false;
