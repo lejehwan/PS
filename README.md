@@ -181,3 +181,6 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1504.%E2%80%85%
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/1956.%E2%80%85%EC%9A%B4%EB%8F%99/%EC%9A%B4%EB%8F%99.java
 
 
+# 12.14
+▶ 백준 2206번 벽 부수고 이동하기
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/2206.%E2%80%85%EB%B2%BD%E2%80%85%EB%B6%80%EC%88%98%EA%B3%A0%E2%80%85%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0/%EB%B2%BD%E2%80%85%EB%B6%80%EC%88%98%EA%B3%A0%E2%80%85%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0.java
