@@ -195,3 +195,6 @@ https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/20040.%E2%80%85
 ▶ 백준 2252번 줄 세우기
 https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/2252.%E2%80%85%EC%A4%84%E2%80%85%EC%84%B8%EC%9A%B0%EA%B8%B0/%EC%A4%84%E2%80%85%EC%84%B8%EC%9A%B0%EA%B8%B0.java
 
+▶ 백준 2342번 Dance Dance Revolution
+https://github.com/lejehwan/PS/blob/main/%EB%B0%B1%EC%A4%80/Gold/2342.%E2%80%85Dance%E2%80%85Dance%E2%80%85Revolution/Dance%E2%80%85Dance%E2%80%85Revolution.java
+
